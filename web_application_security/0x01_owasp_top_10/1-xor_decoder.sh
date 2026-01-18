@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# Check argument
+# Check if an argument was provided
 if [ -z "$1" ]; then
-  echo "Usage: $0 {xor}HASH"
-  exit 1
+    echo "Usage: $0 {xor}HASH"
+    exit 1
 fi
 
-# Remove {xor} prefix
-hash="${1#\{xor\}}"
+# Remove the {xor} prefix if present
+encoded_string="${1#\{xor\}}"
 
-# Base64 decode and XOR with 0x5A (WebSphere key)
-echo "$hash" | base64 -d | \
-while IFS= read -r -n1 char; do
-  printf "\\$(printf '%03o' $(( $(printf '%d' "'$char") ^ 0x5A )))"
-done
-
-echo
+# 1. Decode from Base64
+# 2. Use 'tr' or a loop to XOR each byte with '_' (95)
+# Using perl for a clean one-liner XOR operation
+echo "$encoded_string" | base64 -d | perl -pe '$_ ^= "_" x length'
+echo "" # Add a newline to match your output example
